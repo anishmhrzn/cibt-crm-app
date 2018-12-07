@@ -5,6 +5,8 @@
  */
 package com.cibt.web.entity;
 
+import java.util.Date;
+
 /**
  *
  * @author anis
@@ -12,6 +14,7 @@ package com.cibt.web.entity;
 public class Contact {
     private int id;
     private String name,email,subject,message;
+    private Date addedDate,ModifiedDate;
     private boolean status;
 
     public Contact() {
@@ -72,6 +75,22 @@ public class Contact {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public Date getAddedDate() {
+        return addedDate;
+    }
+
+    public void setAddedDate(Date addedDate) {
+        this.addedDate = addedDate;
+    }
+
+    public Date getModifiedDate() {
+        return ModifiedDate;
+    }
+
+    public void setModifiedDate(Date ModifiedDate) {
+        this.ModifiedDate = ModifiedDate;
     }
 
     @Override
