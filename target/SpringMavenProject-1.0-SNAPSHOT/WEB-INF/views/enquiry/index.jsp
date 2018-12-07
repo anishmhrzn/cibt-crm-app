@@ -34,19 +34,13 @@
                 </div>
                 <div>
                     <label>Course</label>
-                    <select name="course.id">
+                    <select name="courseId">
                         <option value="">Select Course</option>
                         <c:forEach var="c" items="${courses}">
                             <option value="${c.id}">${c.name}</option>
                         </c:forEach>
                     </select>
-                </div>
-                <div>
-                    <label>
-                        <input type="checkbox" name="sendMe"/>
-                        Send me a copy
-                    </label>
-                </div>
+                </div>                
                 <button name="submit" type="submit">Send</button>
             </form>
         </div>

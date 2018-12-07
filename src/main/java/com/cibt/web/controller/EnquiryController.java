@@ -7,8 +7,11 @@ package com.cibt.web.controller;
 
 import com.cibt.web.Dao.CourseDAO;
 import com.cibt.web.Dao.EnquiryDAO;
+import com.cibt.web.dto.EnquiryDTO;
 import com.cibt.web.entity.Course;
 import com.cibt.web.entity.Enquiry;
+import com.cibt.web.service.EnquiryService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,20 +28,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping(value = "/enquiry")
 public class EnquiryController {
+
     @Autowired
-    private EnquiryDAO enquiryDAO;
-    @Autowired
-    private CourseDAO courseDAO;
+    private EnquiryService enquiryService;
     
     @RequestMapping(method = RequestMethod.GET)
-    public String index(Model model){
-        model.addAttribute("courses" , courseDAO.getAll());
+    public String index(Model model) {
+        model.addAttribute("courses", enquiryService.getCourses());
         return "enquiry/index";
     }
-    
+
     @RequestMapping(method = RequestMethod.POST)
-    public @ResponseBody String save(@ModelAttribute("Enquiry") Enquiry enquiry){
-        int result =  enquiryDAO.insert(enquiry);
-        return "Result::" + result;
+    public @ResponseBody
+    String save(@ModelAttribute("EnquiryDTO") EnquiryDTO enquiryDTO) {
+        return "Result::" + enquiryService.insert(enquiryDTO);
     }
 }

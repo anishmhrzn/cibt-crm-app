@@ -31,6 +31,12 @@
                     <label>Message</label>
                     <textarea name="message" required="required" style="height: 200px"></textarea>
                 </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="sendMe"/>
+                        Send me a copy
+                    </label>
+                </div>
                 <button name="submit" type="submit">Send</button>
             </form>
         </div>
