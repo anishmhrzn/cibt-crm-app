@@ -36,8 +36,7 @@ public class EnquiryServiceImpl implements EnquiryService {
 
     @Override
     public int insert(EnquiryDTO enquiryDTO) {
-        Enquiry e = modelMapper.map(enquiryDTO, Enquiry.class);
-        return enquiryDAO.insert(e);
+        return enquiryDAO.insert(modelMapper.map(enquiryDTO, Enquiry.class));
     }
 
     @Override

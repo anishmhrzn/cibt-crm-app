@@ -7,9 +7,11 @@ com\cibt\web\dto\EnquiryDTO.class
 com\cibt\web\controller\EnquiryController.class
 com\cibt\web\Dao\impl\EnquiryDAOImpl.class
 com\cibt\web\Dao\GenericDAO.class
+com\cibt\web\AppStarter.class
 com\cibt\web\Dao\EnquiryDAO.class
 com\cibt\web\Dao\impl\CourseDAOImpl.class
 com\cibt\web\controller\HomeController.class
 com\cibt\web\service\impl\EnquiryServiceImpl.class
 com\cibt\web\service\EnquiryService.class
+com\cibt\web\AppConfigurer.class
 com\cibt\web\entity\Course.class

@@ -7,8 +7,6 @@ package com.cibt.web.controller;
 
 import com.cibt.web.Dao.CourseDAO;
 import com.cibt.web.entity.Contact;
-import com.cibt.web.entity.Course;
-import com.cibt.web.entity.Enquiry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -19,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
@@ -37,7 +36,8 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model) {
         
-        model.addAttribute("courses",courseDAO.getAll());
+        
+        model.addAttribute("courses", courseDAO.getAll());
         return "index";
     }
 
